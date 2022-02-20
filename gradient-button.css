@@ -10,6 +10,16 @@
             color: white;            
             display: block;
           }
+          .btn-spacer {
+            height: 45px;
+             padding: 10px 25px;
+             text-align: center;
+             text-transform: uppercase;
+             transition: 0.5s;
+             background-size: 200% auto;
+             color: transparent;            
+             display: block;
+           }
 
           .btn-grad:hover {
             background-position: right center; /* change the direction of the change here */
