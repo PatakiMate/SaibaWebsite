@@ -1,0 +1,690 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Saiba</title>
+
+    <!-- jQuery -->
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap files (jQuery first, then Popper.js, then Bootstrap JS) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <style>
+        html {
+            /*scroll-behavior: smooth;*/
+            height: 100%;
+        }
+
+        body {
+            height: 100vh;
+
+            margin: 0;
+        }
+
+        .bg {
+            /* The image used */
+            background-color: rgb(15, 15, 15);
+            /*background-image: url("assets/background.jpg");*/
+
+            /* Full height */
+            height: 100%;
+            position: relative;
+            text-align: center;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        /* Centered text */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .navbarText {
+            letter-spacing: 1px;
+            font-family: raleway;
+            text-transform: uppercase;
+        }
+
+        @font-face {
+            font-family: azonix;
+            src: url(assets/Azonix.otf);
+        }
+
+        @font-face {
+            font-family: raleway;
+            src: url(assets/Raleway-SemiBold.otf);
+        }
+
+        @font-face {
+            font-family: raleway-medium;
+            src: url(assets/Raleway-Light.otf);
+        }
+
+
+        .container {
+            height: 100%;
+            display: table;
+            width: 100%;
+
+            /*set left/right padding according to needs*/
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <script type="text/javascript">
+        /// some script
+        $(function () {
+            'use strict'
+
+            $("[data-trigger]").on("click", function () {
+                var trigger_id = $(this).attr('data-trigger');
+                $(trigger_id).toggleClass("show");
+                $('body').toggleClass("offcanvas-active");
+            });
+
+            // close if press ESC button 
+            $(document).on('keydown', function (event) {
+                if (event.keyCode === 27) {
+                    $(".navbar-collapse").removeClass("show");
+                    $("body").removeClass("overlay-active");
+                }
+            });
+
+            // close button 
+            $(".btn-close").click(function (e) {
+                $(".navbar-collapse").removeClass("show");
+                $("body").removeClass("offcanvas-active");
+            });
+
+
+        })
+    </script>
+
+    <style type="text/css">
+        body.offcanvas-active {
+            overflow: hidden;
+        }
+
+        .offcanvas-header {
+            display: none;
+        }
+
+        h1 {
+            font-size: 120px;
+            font-family: azonix;
+            color: white;
+        }
+
+        h3 {
+            font-size: 100px;
+            font-family: azonix;
+            color: white;
+        }
+
+        h2 {
+            color: white;
+            font-size: 20px;
+        }
+
+        p {
+            color: white;
+            font-family: raleway-medium;
+            text-align: start;
+        }
+
+        .grad-text {
+            background: #AA3535;
+            background: -webkit-linear-gradient(to right, #AA3535, #09bbd3);
+            background: -moz-linear-gradient(to right, #AA3535, #09bbd3);
+            background: linear-gradient(to right, #AA3535, #09bbd3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grad-text2 {
+            background: linear-gradient(to right, #AA3535,  #09bbd3);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        @media (max-width: 992px) {
+            .offcanvas-header {
+                display: block;
+            }
+
+            h1 {
+                font-size: 60px;
+                font-family: azonix;
+                color: white;
+            }
+
+            h3 {
+                font-size: 60px;
+                font-family: azonix;
+                color: white;
+            }
+
+            .navbar-collapse {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 100%;
+                width: 80%;
+                padding-top: 100px;
+                padding-right: 1rem;
+                padding-left: 3rem;
+                overflow-y: auto;
+                visibility: hidden;
+                background-color: black;
+                transition: visibility .2s ease-in-out, transform .2s ease-in-out;
+            }
+
+            .navbar-collapse.show {
+                visibility: visible;
+                transform: translateX(-100%);
+            }
+
+            .mint-button {
+                visibility: hidden;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="hamburger-menu.css">
+    <link rel="stylesheet" href="gradient-button.css">
+    <link rel="stylesheet" href="home-page.css">
+    <link rel="stylesheet" href="./accordion.css">
+    <link rel="stylesheet" href="./chevron-animation.css">
+    <link rel="stylesheet" href="./card-scrolling.css">
+    <link rel="stylesheet" href="./team.css">
+    <link rel="stylesheet" href="./roadmap.css">
+    <link rel="stylesheet" href="./accordiontest.css">
+</head>
+
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="200">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: transparent; height: 80px;">
+        <div class="container px-3">
+            <a class="navbar-brand" href="#">
+                <img src="assets/SaibaIconNoBackground.png" alt="..." height="36" width="36">
+            </a>
+            <div class="navbar-collapse" id="main_nav" data-target="#myNavbar">
+                <div class="container">
+
+
+                    <ul class="navbar-nav" id="myNavbar">
+                        <li class="nav-item btn-close navbarText"><a class="nav-link" href="#Home"> Home </a></li>
+                        <li class="nav-item btn-close navbarText"><a class="nav-link" href="#About"> About </a></li>
+                        <li class="nav-item btn-close navbarText"><a class="nav-link" href="#Roadmap"> Roadmap </a></li>
+                        <li class="nav-item btn-close navbarText"><a class="nav-link" href="#FAQ"> FAQ </a></li>
+                        <li class="nav-item btn-close navbarText"><a class="nav-link" href="#Team"> Team </a></li>
+                        <div class="container" style="width: 50px"></div>
+                    </ul>
+                    <div class="row d-flex ms-auto order-5">
+                        <div class="" style="padding-right: 10px;">
+                            <img src="/assets/Discord.svg" height="45px" width="45px" alt="Italian Trulli">
+                        </div>
+                        <div class="" style="padding-right: 10px;">
+                            <img src="/assets/Twitter.svg" height="45px" width="45px" alt="Italian Trulli">
+                        </div>
+                        <div class="mint-button">
+                            <a class="btn-grad navbarText" href="#features">Connect Wallet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-toggler menu-btn" style="border-color: transparent;" type="button"
+                data-trigger="#main_nav">
+                <div class="menu-btn__burger"></div>
+            </div>
+        </div>
+    </nav>
+
+    <script src="hamburger-menu.js"></script>
+
+    <div class="background-layer1" id="Home">
+        <div class="background-layer2">
+            <div class="container px-2 vh-100">
+                <div class="row m-0 align-items-center justify-content-xl-start h-100">
+                    <div class="col-lg-12 col-xl-7 col-xxl-6">
+                        <div class="text-xl-left text-lg-center">
+                            <h1> Saiba</h1>
+                            <h2 class="lead fw-normal text-white mb-4 navbarText">A safe NFT community platform</h2>
+                            <div class="d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                <a class="btn-grad navbarText" href="#features">MINT NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="background-layer1" id="Cards">
+        <div class="container" style="height: 4em;"></div>
+        <div class="container px-2 vh-100">
+            <div class='scrollingBG'>
+                <div class="container d-lg-none" style="height: 15em;"></div>
+                <div class='card-overlay'>
+                    <div class="row m-0 align-items-center justify-content-lg-start h-100">
+                        <div class="col-lg-7 col-xl-7 col-xxl-7">
+                            <div class="text-lg-left text-md-center">
+                                <div class="container .d-none .d-sm-block .d-md-none">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-lg-5 text-center">
+                            <div class="container d-lg-none" style="height: 6em;"></div>
+                            <h2 class="navbarText" style="text-align: start;">Recieve your keycard today</h2>
+                            <p>With your keycard bla blae With your keycard bla blaeWith
+                                your keycard bla blaeWith your keycard bla blaeWith your
+                                keycard bla blaeWith your keycard bla blaeWith your keycard bla blaeWith your </p>
+                            <div class="container" style="height: 2em;"></div>
+                            <h2 class="navbarText" style="text-align: start;">Description</h2>
+                            <p>With your keycard bla blae With your keycard bla blaeWith
+                                your keycard bla blaeWith your keycard bla blaeWith your
+                                keycard bla blaeWith your keycard bla blaeWith your keycard bla blaeWith your </p>
+                            <div class="container" style="height: 2em;"></div>
+                            <h2 class="navbarText" style="text-align: start;">Description</h2>
+                            <p>With your keycard bla blae With your keycard bla blaeWith
+                                your keycard bla blaeWith your keycard bla blaeWith your
+                                keycard bla blaeWith your keycard bla blaeWith your keycard bla blaeWith your </p>
+                            <div class="container d-none d-sm-none d-md-block d-lg-none" style="height: 20em;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    </div>
+
+    <div class="background-layer1" id="About">
+        <div class="container px-3 vh-100">
+            <div class="row m-0 align-items-center justify-content-xl-start h-100">
+                <div class="col-lg-12 col-xl-8 col-xxl-8">
+                    <div class="text-xl-left text-lg-center">
+                        <div class="container .d-none .d-sm-block .d-md-none" style="height: 5em;"></div>
+                        <h1 class="grad-text">
+                            About</h1>
+                        <h2 class="navbarText">The Project</h2>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-xxl-4 text-center">
+                    <div class="container" style="height: 2em;"></div>
+                    <h2 class="navbarText" style="text-align: start;">Our Vision</h2>
+                    <p>Imagine a future where the NFT market is organized on a safe platform, 
+                        built on a structured system free of scams, and has a unique filtering method 
+                        that is loyal to the blockchain,
+                         works on the web 3.0 and helps to attract new users to the market.</p>
+                    <div class="container" style="height: 2em;"></div>
+                    <h2 class="navbarText" style="text-align: start;">Our Goal</h2>
+                    <p>Our goal is to create a community platform,
+                         where only those teams can start building communities that
+                          have been substantially reviewed and approved by our team. 
+                          We track the roadmap of each project and if the community deems it
+                           necessary we hold the creators to account for their actions. </p>
+                    <div class="container" style="height: 2em;"></div>
+                    <h2 class="navbarText" style="text-align: start;">The Beginnings</h2>
+                    <p>We want the Saiba Platform to start from the core of the NFT community.
+                         With this method, our team can make profits and others
+                          who will follow us along the way and see our vision.
+                           We realize this idea in 4 phases.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="background-layer1" id="Roadmap">
+        <div class="container" style="height: 4em;"></div>
+        <div class="container px-3 vh-100">
+            <div class="row m-0 align-items-top justify-content-xl-start h-100">
+                <div class="col-lg-12 col-xl-8 col-xxl-8">
+                    <div class="text-xl-left text-lg-center">
+                        <div class="container .d-none .d-sm-block .d-md-none" style="height: 5em;"></div>
+                        <h3>
+                            Phase 01</h3>
+                        <h2 class="navbarText">Enter Saiba</h2>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-xxl-4 text-center">
+                    <div class="container" style="height: 2em;"></div>
+                    <div class="timeline">
+                        <div class="outer">
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Community building</h2>
+                                    <p>Our goal is to reach 3-5k members on the Discord server and 4-6k followers on the official Saiba Twitter page.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Launch on our Simians Universe</h2>
+                                    <p>The project will be launched on the official website of Simians Universe.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Listing on Magic Eden</h2>
+                                    <p>We’ll be listing the Enter Saiba collection on Solana’s best-known secondary marketplace. We provide this to give our customers the opportunity to trade early.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-0 align-items-top justify-content-xl-start h-100">
+                <div class="col-lg-12 col-xl-8 col-xxl-8">
+                    <div class="text-xl-left text-lg-center">
+                        <div class="container .d-none .d-sm-block .d-md-none" style="height: 5em;"></div>
+                        <h3>
+                            Phase 02</h3>
+                        <h2 class="navbarText">Saiba Agents</h2>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-xxl-4 text-center">
+                    <div class="container" style="height: 2em;"></div>
+                    <div class="timeline">
+                        <div class="outer">
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Community building</h2>
+                                    <p>Our goal is to reach 15-20k members on the Discord server and 7-15k followers on the official Saiba Twitter page.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Launch on our Website</h2>
+                                    <p>The project will be launched on Saiba’s official website.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Listing on ME</h2>
+                                    <p>We’ll be listing the Enter Saiba collection on Solana’s best-known secondary marketplace. We provide this to give our customers the opportunity to trade early.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Royalty Distribution</h2>
+                                    <p>25% of the volume trade will be allocated to certain Saiba Agents holders each month.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Staking NFT for $SAIBA Token</h2>
+                                    <p>We provide all holders with stake opportunities for the $SAIBA Token, which will be affected by the productivity and market capitalization of the Saiba Platform.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-0 align-items-top justify-content-xl-start h-100">
+                <div class="col-lg-12 col-xl-8 col-xxl-8">
+                    <div class="text-xl-left text-lg-center">
+                        <div class="container .d-none .d-sm-block .d-md-none" style="height: 5em;"></div>
+                        <h3>
+                            Phase 03</h3>
+                        <h2 class="navbarText">Saiba Accessories</h2>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-xxl-4 text-center">
+                    <div class="container" style="height: 2em;"></div>
+                    <div class="timeline">
+                        <div class="outer">
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">WL spots for holders in Phase 3</h2>
+                                    <p>WL seats will be allocated among Saiba Agents holders.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Sale for only WLs</h2>
+                                    <p>Only those will be able to mint in Phase 3, who has WL seats.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Combining Parts for Assembled Accessories</h2>
+                                    <p>The Phase 3 collection will be a 3333 supply. 
+                                        We'll sell 2222 units in this collection, and 1111 will be on the market 
+                                        as a random airdrop. This collection will consist of 3 parts,
+                                         and only those members will be eligible for the Phase 3 Utilities 
+                                         who assembled the individual pieces.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Royalty Distribution</h2>
+                                    <p>30% of the volume trade will be allocated to every Fully Assembled Accessories holder each month.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Staking NFT for $SAIBA Token</h2>
+                                    <p>We provide all holders with stake opportunities for the $SAIBA Token, which will be affected by the productivity and market capitalization of the Saiba Platform.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-0 align-items-top justify-content-xl-start h-100">
+                <div class="col-lg-12 col-xl-8 col-xxl-8">
+                    <div class="text-xl-left text-lg-center">
+                        <div class="container .d-none .d-sm-block .d-md-none" style="height: 5em;"></div>
+                        <h3>
+                            Phase 04</h3>
+                        <h2 class="navbarText">Saiba Platform</h2>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-xxl-4 text-center">
+                    <div class="container" style="height: 2em;"></div>
+                    <div class="timeline">
+                        <div class="outer">
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Saiba Platform Beta Test</h2>
+                                    <p>2022 Q4/2023 Q1
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="roadmap-card">
+                                <div class="info">
+                                    <h2 class="navbarText title">Saiba Platform Release</h2>
+                                    <p>2023 Q2/Q3
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="background-layer1" id="FAQ">
+        <div class="container px-3 vh-100">
+            <div class="row m-0 align-items-center justify-content-xl-start h-100">
+                <div class="col-lg-12 col-xl-7 col-xxl-6">
+                    <div class="text-xl-left text-lg-center">
+                        <div class="container .d-none .d-sm-block .d-md-none" style="height: 5em;"></div>
+                        <h1 class="grad-text">FAQ</h1>
+                        <h2 class="navbarText">Frequently asked questions
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xxl-6 text-center align-items-center">
+                    <script src="https://kit.fontawesome.com/a91a27e46f.js" crossorigin="anonymous"></script>
+                    <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
+                        <h2 class="navbarText col-10">What is our most important task?</h2>
+                        <div id="chev" class="chevron--down col-2"
+                            style="transform: rotate(180deg); position:relative;">
+                            <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                <g class="chevron__container">
+                                    <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
+                                    <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="acc-panel">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="container" style="height: 1em;"></div>
+                    <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
+                        <h2 class="navbarText col-10">What is our most important task?</h2>
+                        <div id="chev" class="chevron--down col-2"
+                            style="transform: rotate(180deg); position:relative;">
+                            <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                <g class="chevron__container">
+                                    <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
+                                    <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="acc-panel">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="container" style="height: 1em;"></div>
+                    <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
+                        <h2 class="navbarText col-10">What is our most important task?</h2>
+                        <div id="chev" class="chevron--down col-2"
+                            style="transform: rotate(180deg); position:relative;">
+                            <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                <g class="chevron__container">
+                                    <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
+                                    <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="acc-panel">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <script src="new-accordion.js"></script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="background-layer1" id="Team">
+        <div class="container px-3 vh-100">
+            <div class="row m-0 align-items-center justify-content-xl-start h-100">
+                <div class="col-lg-12 col-xl-5 col-xxl-5">
+                    <div class="text-xl-left text-lg-center">
+                        <div class="container .d-none .d-sm-block .d-md-none" style="height: 5em;"></div>
+                        <h1 class="grad-text">
+                            Team</h1>
+                        <h2 class="navbarText">Who are we</h2>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-xxl-7 text-center ">
+                    <div class="container" style="height: 2em;"></div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="flex-column d-flex justify-content-end p-3">
+                            <div class="square" style="background-image: url('assets/SaibaProfile1.png')"></div>
+                            <h2 class="navbarText  pt-2">Raynbow Grisea</h2>
+                            <p style="text-align: center;">Co-Founder</p>
+                        </div>
+                        <div class="flex-column d-flex justify-content-start p-3">
+                            <div class="square" style="background-image: url('assets/SaibaProfile2.png')"></div>
+                            <h2 class="navbarText  pt-2">Matteo Ruscello</h2>
+                            <p style="text-align: center;">Developer</p>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="flex-column d-flex justify-content-end p-3">
+                            <div class="square" style="background-image: url('assets/SaibaProfile3.png')"></div>
+                            <h2 class="navbarText pt-2">Mr. Mellow</h2>
+                            <p style="text-align: center;">Founder</p>
+                        </div>
+                        <div class="flex-column d-flex justify-content-start p-3">
+                            <div class="square" style="background-image: url('assets/SaibaProfile4.png')"></div>
+                            <h2 class="navbarText  pt-2">Dr. Riddle</h2>
+                            <p style="text-align: center;">Co-Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // Add scrollspy to <body>
+            $('body').scrollspy({ target: ".navbar", offset: 50 });
+
+            // Add smooth scrolling on all links inside the navbar
+            $("#myNavbar a").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+                    jQuery.easing.def = 'easeOutCirc';
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 400, function () {
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                }  // End if
+            });
+        });
+    </script>
+</body>
+
+</html>

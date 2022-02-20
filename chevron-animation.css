@@ -1,0 +1,48 @@
+.chevron__line2, .chevron__line1 {
+    stroke-width: 10;
+    stroke-linecap: round;
+    -webkit-transition: -webkit-transform 0.4s, stroke 0.4s;
+    transition: transform 0.4s, stroke 0.4s;
+  }
+  
+  .chevron__line1 {
+    -webkit-transform-origin: 50px 50px;
+    transform-origin: 50px 50px;
+  }
+  .chevron__line2 {
+    -webkit-transform-origin: 50px 50px;
+    transform-origin: 50px 50px;
+  }
+  .chevron--down, .chevron--up {
+    display: block;
+  }
+  .chevron--down .chevron__container, .chevron--up .chevron__container {
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transform: translateY(13px);
+    transform: translateY(13px);
+  }
+  .chevron--down .chevron__line1, .chevron--up .chevron__line1 {
+    stroke: #707173;
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }
+  .chevron--down .chevron__line2, .chevron--up .chevron__line2 {
+    stroke: #707173;
+    -webkit-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+  }
+  .chevron--up .chevron__container {
+    -webkit-transform: translateY(-13px);
+    transform: translateY(-13px);
+  }
+  .chevron--up .chevron__line1 {
+    stroke: white;
+    -webkit-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+  }
+  .chevron--up .chevron__line2 {
+    stroke: white;
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }

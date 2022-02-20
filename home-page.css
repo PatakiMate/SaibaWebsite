@@ -1,0 +1,34 @@
+.background-layer1 {
+    /* The image used */
+    background-image: url("assets/web_city_02.png");
+
+    /* Full height */
+    min-height: 100%;
+    position: relative;
+    text-align: center;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+}
+.test-background {
+    height: min-content(100vh);
+    background-color: aquamarine;
+    text-align: center;
+    position: relative;
+}
+.background-layer2 {
+    /* The image used */
+    background-image: url("assets/web_city_01.png");
+    /* Full height */
+    height: 100%;
+    position: relative;
+    text-align: center;
+
+    /* Center and scale the image nicely */
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

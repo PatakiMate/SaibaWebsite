@@ -1,0 +1,33 @@
+@keyframes bgScroll {
+  0% {
+    background-position : 0px 0px
+  }
+  100% {
+    background-position : 0px -648px
+  }
+}
+.scrollingBG {
+  display:block;
+  width:100%;
+  height:100%;
+  background-image:url("assets/CardsBackground.png");
+  animation: bgScroll 10s linear infinite;
+}
+.card-overlay {
+  width:100%;
+  height:100%;
+  background-size: contain;
+  background-image:url("assets/CardOverlay.png");
+}
+
+
+@media (max-width: 992px) {
+  .card-overlay {
+    width:100%;
+    height:100%;
+    background-size:contain;
+    background-position: top;
+    background-image:url("assets/CardOverlayMobile2.png");
+  }
+}
+
