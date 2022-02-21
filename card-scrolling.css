@@ -6,6 +6,10 @@
     background-position : 0px -648px
   }
 }
+.card-gif {
+background-color: transparent;
+}
+
 .scrollingBG {
   display:block;
   width:100%;
@@ -19,6 +23,18 @@
   background-size: contain;
   background-image:url("assets/CardOverlay.png");
 }
+.card-mask {
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: url("assets/CardMaskPc.png");
+  -webkit-mask-size: 50%;
+  -webkit-mask-position: left center;
+  mask-position: left center;
+  mask-size: contain;
+  mask-image: url("assets/CardMaskPc.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
 
 
 @media (max-width: 992px) {
@@ -28,6 +44,9 @@
     background-size:contain;
     background-position: top;
     background-image:url("assets/CardOverlayMobile2.png");
+  }
+  .card-gif {
+    width: 100%;
   }
 }
 
