@@ -92,6 +92,14 @@
     </style>
     <script type="text/javascript">
         /// some script
+
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".navbar");
+                $nav.toggleClass('navbar-color', $(this).scrollTop() > $nav.height());
+            });
+        });
+
         $(function () {
             'use strict'
 
@@ -232,7 +240,8 @@
 
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="200">
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: transparent; height: 80px;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbarColor"
+        style="background-color: transparent; height: 80px;">
         <div class="container px-3">
             <a class="navbar-brand" href="#">
                 <img src="assets/SaibaIconNoBackground.png" alt="..." height="36" width="36">
@@ -251,14 +260,14 @@
                     </ul>
                     <div class="row d-flex ms-auto order-5">
                         <div class="" style="padding-right: 10px;">
-                            <a href="https://discord.gg/Tn6gN4bGX5 " target="_blank"> <img src="/assets/Discord.svg"
+                            <a href="https://discord.gg/Tn6gN4bGX5" target="_blank"> <img src="/assets/Discord.svg"
                                     height="45px" width="45px" alt="Italian Trulli"></a>
                         </div>
                         <div class="" style="padding-right: 10px;">
                             <a href="https://twitter.com/SaibaSolutions" target="_blank"> <img src="/assets/Twitter.svg"
                                     height="45px" width="45px" alt="Italian Trulli"></a>
                         </div>
-                        <a class="btn-spacer d-md-none navbarText" href="#features">Connect Wallet</a>
+                        <a class="btn-spacer d-md-none navbarText" href="">Connect Wallet</a>
 
                     </div>
                 </div>
@@ -274,8 +283,8 @@
 
     <div class="background-layer1" id="Home">
         <div class="background-layer2">
-        <div class="container px-3 vh-100">
-            
+            <div class="container px-3 vh-100">
+
 
                 <div class="row m-0 align-items-center justify-content-xl-start h-100">
                     <div class="col-lg-12 col-xl-7 col-xxl-6">
@@ -290,11 +299,11 @@
                     <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
                     </div>
                 </div>
-               
+
             </div>
             <div class="container" style="height: 10em;"></div>
         </div>
-        
+
     </div>
     </div>
 
@@ -303,7 +312,6 @@
             <div class="row m-0 align-items-center justify-content-xl-start h-100">
                 <div class="col-lg-12 col-xl-8 col-xxl-8">
                     <div class="text-xl-left text-lg-center">
-                        <div class="container .d-none .d-sm-block .d-md-none" style="height: 5em;"></div>
                         <img class="card-gif" src="assets/Cards.gif">
                     </div>
                 </div>
@@ -641,7 +649,8 @@
                         </div>
                     </div>
                     <div class="acc-panel">
-                        <p>Please join our **Discord(link)** where the full details are provided. Be sure to check it
+                        <p>Please join our <a href="https://discord.gg/Tn6gN4bGX5">Discord</a> where the full details
+                            are provided. Be sure to check it
                             out and get involved!</p>
                     </div>
                     <div class="container" style="height: 1em;"></div>

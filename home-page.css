@@ -13,6 +13,10 @@
     background-attachment:fixed;
     background-size: cover;
 }
+.navbar.navbar-color {
+        background-color: black !important;
+        transition: background-color 400ms linear;
+}
 .test-background {
     height: min-content(100vh);
     background-color: aquamarine;
