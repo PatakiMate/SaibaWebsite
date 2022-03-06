@@ -3,4 +3,12 @@
     height: 230px;
     background-size: cover;
     background-position: center;
+    position: relative;
+}
+.social-icon {
+    width: 10%; 
+    height:9%; 
+    position:absolute; 
+    right: 10px; 
+    bottom: 10px;
 }
