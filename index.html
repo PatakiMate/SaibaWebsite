@@ -10,248 +10,44 @@
     <link rel="icon" type="image/x-icon" href="/assets/SaibaColoredIcon.png">
 
     <!-- jQuery -->
-
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
     <!-- Bootstrap files (jQuery first, then Popper.js, then Bootstrap JS) -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
         type="text/css" />
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
         type="text/javascript"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <style>
-        html {
-            /*scroll-behavior: smooth;*/
-            height: 100%;
-            background-color: #0f0f0f;
-        }
 
-        body {
-            background-color: #0f0f0f;
-            height: 100vh;
-            margin: 0;
-        }
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="scripts/navbar.js"></script>
 
-        .bg {
-            /* The image used */
-            background-color: rgb(15, 15, 15);
-            /*background-image: url("assets/background.jpg");*/
-
-            /* Full height */
-            height: 100%;
-            position: relative;
-            text-align: center;
-
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        /* Centered text */
-        .centered {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .navbarText {
-            letter-spacing: 1px;
-            font-family: raleway;
-            text-transform: uppercase;
-        }
-
-        @font-face {
-            font-family: azonix;
-            src: url(assets/Azonix.otf);
-        }
-
-        @font-face {
-            font-family: raleway;
-            src: url(assets/Raleway-SemiBold.otf);
-        }
-
-        @font-face {
-            font-family: raleway-medium;
-            src: url(assets/Raleway-Light.otf);
-        }
-
-
-        .container {
-            height: 100%;
-            display: table;
-            width: 100%;
-
-            /*set left/right padding according to needs*/
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-    </style>
-    <script type="text/javascript">
-        /// some script
-
-        $(function () {
-            $(document).scroll(function () {
-                var $nav = $(".navbar");
-                $nav.toggleClass('navbar-color', $(this).scrollTop() > $nav.height());
-            });
-        });
-
-        $(function () {
-            'use strict'
-
-            $("[data-trigger]").on("click", function () {
-                var trigger_id = $(this).attr('data-trigger');
-                $(trigger_id).toggleClass("show");
-                $('body').toggleClass("offcanvas-active");
-            });
-
-            // close if press ESC button 
-            $(document).on('keydown', function (event) {
-                if (event.keyCode === 27) {
-                    $(".navbar-collapse").removeClass("show");
-                    $("body").removeClass("overlay-active");
-                }
-            });
-
-            // close button 
-            $(".btn-close").click(function (e) {
-                $(".navbar-collapse").removeClass("show");
-                $("body").removeClass("offcanvas-active");
-            });
-
-
-        })
-    </script>
-
-    <style type="text/css">
-        body.offcanvas-active {
-            overflow: hidden;
-        }
-
-        .offcanvas-header {
-            display: none;
-        }
-
-        .unselectable {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        h1 {
-            font-size: 120px;
-            font-family: azonix;
-            color: white;
-        }
-
-        h3 {
-            font-size: 100px;
-            font-family: azonix;
-            color: white;
-        }
-
-        h2 {
-            color: white;
-            font-size: 20px;
-        }
-
-        p {
-            color: white;
-            font-family: raleway-medium;
-            text-align: start;
-        }
-
-        .grad-text {
-            background: #AA3535;
-            background: -webkit-linear-gradient(to right, #AA3535, #09bbd3);
-            background: -moz-linear-gradient(to right, #AA3535, #09bbd3);
-            background: linear-gradient(to right, #AA3535, #09bbd3);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .grad-text2 {
-            background: linear-gradient(to right, #AA3535, #09bbd3);
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
-
-
-        @media (max-width: 992px) {
-            .offcanvas-header {
-                display: block;
-            }
-
-            h1 {
-                font-size: 60px;
-                font-family: azonix;
-                color: white;
-            }
-
-            h3 {
-                font-size: 60px;
-                font-family: azonix;
-                color: white;
-            }
-
-            .navbar-collapse {
-                position: fixed;
-                top: 0;
-                bottom: 0;
-                left: 100%;
-                width: 80%;
-                padding-top: 100px;
-                padding-right: 1rem;
-                padding-left: 3rem;
-                overflow-y: auto;
-                visibility: hidden;
-                background-color: black;
-                transition: visibility .2s ease-in-out, transform .2s ease-in-out;
-            }
-
-            .navbar-collapse.show {
-                visibility: visible;
-                transform: translateX(-100%);
-            }
-
-            .mint-button {
-                visibility: hidden;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="hamburger-menu.css">
-    <link rel="stylesheet" href="gradient-button.css">
-    <link rel="stylesheet" href="home-page.css">
-    <link rel="stylesheet" href="./accordion.css">
-    <link rel="stylesheet" href="./chevron-animation.css">
-    <link rel="stylesheet" href="./card-scrolling.css">
-    <link rel="stylesheet" href="./team.css">
-    <link rel="stylesheet" href="./roadmap.css">
-    <link rel="stylesheet" href="./accordiontest.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/hamburger-menu.css">
+    <link rel="stylesheet" href="style/gradient-button.css">
+    <link rel="stylesheet" href="style/home-page.css">
+    <link rel="stylesheet" href="style/accordion.css">
+    <link rel="stylesheet" href="style/chevron-animation.css">
+    <link rel="stylesheet" href="style/card-scrolling.css">
+    <link rel="stylesheet" href="style/team.css">
+    <link rel="stylesheet" href="style/roadmap.css">
+    <link rel="stylesheet" href="style/accordiontest.css">
 </head>
 
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="200">
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbarColor"
-        style="background-color: transparent; height: 80px;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbarColor">
         <div class="container-fluid px-3">
+            <!-- Navbar logo part -->
             <a class="navbar-brand" href="#">
                 <img src="assets/SaibaIconNoBackground.png" height="36" width="36">
             </a>
+            <!-- Desktop navbar -->
             <div class="navbar-collapse" id="main_nav" data-target="#myNavbar">
                 <div class="container" id="header-top">
-
+                    <!-- Navbar part -->
                     <ul class="navbar-nav" id="myNavbar">
                         <li class="nav-item btn-close navbarText"><a class="nav-link" href="#Home"> Home </a></li>
                         <li class="nav-item btn-close navbarText"><a class="nav-link" href="#About"> About </a></li>
@@ -259,40 +55,30 @@
                         <li class="nav-item btn-close navbarText"><a class="nav-link" href="#Staking"> Staking </a></li>
                         <li class="nav-item btn-close navbarText"><a class="nav-link" href="#FAQ"> FAQ </a></li>
                         <li class="nav-item btn-close navbarText"><a class="nav-link" href="#Team"> Team </a></li>
-                        <div class="container" style="width: 50px"></div>
                     </ul>
+                    <!-- Social part -->
                     <div class="row d-flex ms-auto order-5">
-                        <div class="" style="padding-right: 10px;">
-                            <a href="https://discord.gg/kadyEKdDWb" target="_blank"> <img src="/assets/Discord.svg"
-                                    height="45px" width="45px"></a>
-                        </div>
-                        <div class="" style="padding-right: 10px;">
-                            <a href="https://twitter.com/SaibaSolutions" target="_blank"> <img src="/assets/Twitter.svg"
-                                    height="45px" width="45px"></a>
-                        </div>
+                        <a class="social-icon-header" href="https://discord.gg/kadyEKdDWb" target="_blank"> <img
+                                src="/assets/Discord.svg" height="45px" width="45px"></a>
+                        <a class="social-icon-header" href="https://twitter.com/SaibaSolutions" target="_blank"> <img
+                                src="/assets/Twitter.svg" height="45px" width="45px"></a>
                         <div class="container d-sm-block d-md-none" style="height: 2em;"></div>
                         <a class="btn-grad navbarText" href="docs/Saiba-Whitepaper.pdf">Whitepaper</a>
-
                     </div>
                 </div>
             </div>
+            <!-- Mobile navbar -->
             <div class="navbar-toggler menu-btn" style="border-color: transparent; background-color: transparent;"
                 data-trigger="#main_nav">
                 <div class="menu-btn__burger"></div>
             </div>
         </div>
+        <!-- Navbar scripts -->
+        <script src="scripts/header-changer.js"></script>
+        <script src="scripts/hamburger-menu.js"></script>
     </nav>
-<script>
-    let width = window.outerWidth;
-    console.log("width: " + width);
-    if(width < 992) {
-    document.getElementById("header-top").className = 'container';
-    } else {
-        document.getElementById("header-top").className = 'container-fluid'; 
-    }
-</script>
-    <script src="hamburger-menu.js"></script>
 
+    <!-- Hero section -->
     <div class="background-layer1" id="Home">
         <div class="background-layer2">
             <div class="container px-3 vh-100">
@@ -302,7 +88,8 @@
                             <h1> Saiba</h1>
                             <h2 class="lead fw-normal text-white mb-4 navbarText">A safe NFT community platform</h2>
                             <div class="d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                <a class="btn-grad navbarText" href="https://enter-saiba.monkelabs.io/">MINT ON MONKELABS</a>
+                                <a class="btn-grad navbarText" href="https://enter-saiba.monkelabs.io/">MINT ON
+                                    MONKELABS</a>
                             </div>
                         </div>
                     </div>
@@ -313,8 +100,7 @@
 
     </div>
 
-    </div>
-
+    <!-- Cards section -->
     <div class="background-layer1" id="Cards">
         <div class="container px-3 vh-100">
             <div class="row m-0 align-items-center justify-content-xl-start h-100">
@@ -342,6 +128,7 @@
         </div>
     </div>
 
+    <!-- About section -->
     <div class="background-layer1" id="About">
         <div class="container" style="height: 4em;"></div>
         <div class="container px-3 vh-100">
@@ -379,9 +166,11 @@
         </div>
     </div>
 
+    <!-- Roadmap section -->
     <div class="background-layer1" id="Roadmap">
         <div class="container" style="height: 4em;"></div>
         <div class="container px-3 vh-100">
+            <!-- Phase 1 -->
             <div class="row m-0 align-items-top justify-content-xl-start h-100">
                 <div class="col-lg-12 col-xl-8 col-xxl-8">
                     <div class="text-xl-left text-lg-center">
@@ -446,6 +235,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Phase 2 -->
             <div class="row m-0 align-items-top justify-content-xl-start h-100">
                 <div class="col-lg-12 col-xl-8 col-xxl-8">
                     <div class="text-xl-left text-lg-center">
@@ -495,6 +285,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Phase 3 -->
             <div class="row m-0 align-items-top justify-content-xl-start h-100">
                 <div class="col-lg-12 col-xl-8 col-xxl-8">
                     <div class="text-xl-left text-lg-center">
@@ -560,6 +351,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Phase 4 -->
             <div class="row m-0 align-items-top justify-content-xl-start h-100">
                 <div class="col-lg-12 col-xl-8 col-xxl-8">
                     <div class="text-xl-left text-lg-center">
@@ -593,6 +385,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Staking section -->
     <div class="background-layer1" id="Staking">
         <div class="container px-3 vh-100">
             <div class="container d-sm-block d-md-none" style="height: 5em;"></div>
@@ -620,6 +414,8 @@
             </div>
         </div>
     </div>
+
+    <!-- FAQ section -->
     <div class="background-layer1" id="FAQ">
         <div class="container px-3 vh-100">
             <div class="row m-0 align-items-center justify-content-xl-start h-100">
@@ -633,104 +429,119 @@
                 </div>
                 <div class="col-xl-5 col-xxl-6 text-center align-items-center">
                     <script src="https://kit.fontawesome.com/a91a27e46f.js" crossorigin="anonymous"></script>
-                    <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
-                        <h2 class="navbarText col-10 unselectable">Why Solana?</h2>
-                        <div id="chev" class="chevron--down col-2"
-                            style="transform: rotate(180deg); position:relative;">
-                            <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
-                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
-                                <g class="chevron__container">
-                                    <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
-                                    <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
-                                </g>
-                            </svg>
+                    <div id="Question1">
+                        <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
+                            <h2 class="navbarText col-10 unselectable">Why Solana?</h2>
+                            <div id="chev" class="chevron--down col-2"
+                                style="transform: rotate(180deg); position:relative;">
+                                <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
+                                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                    <g class="chevron__container">
+                                        <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
+                                        <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
+                                    </g>
+                                </svg>
+                            </div>
                         </div>
-                    </div>
-                    <div class="acc-panel">
-                        <p>Due to the high gas fees on the Ethereum chain, we opted for the Solana BlockChain.</p>
+                        <div class="acc-panel">
+                            <p>Due to the high gas fees on the Ethereum chain, we opted for the Solana BlockChain.</p>
+                        </div>
                     </div>
                     <div class="container" style="height: 1em;"></div>
-                    <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
-                        <h2 class="navbarText col-10 unselectable">Is there a Whitelist?</h2>
-                        <div id="chev" class="chevron--down col-2"
-                            style="transform: rotate(180deg); position:relative;">
-                            <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
-                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
-                                <g class="chevron__container">
-                                    <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
-                                    <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
-                                </g>
-                            </svg>
+                    <div id="Question2">
+                        <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
+                            <h2 class="navbarText col-10 unselectable">Is there a Whitelist?</h2>
+                            <div id="chev" class="chevron--down col-2"
+                                style="transform: rotate(180deg); position:relative;">
+                                <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
+                                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                    <g class="chevron__container">
+                                        <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
+                                        <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
+                                    </g>
+                                </svg>
+                            </div>
                         </div>
-                    </div>
-                    <div class="acc-panel">
-                        <p>Yes. There will be a whitelist for members who have been active in our community and showed
-                            dedication to the project and future of the Saiba.</p>
-                    </div>
-                    <div class="container" style="height: 1em;"></div>
-                    <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
-                        <h2 class="navbarText col-10 unselectable">How can I get Whitelisted?</h2>
-                        <div id="chev" class="chevron--down col-2"
-                            style="transform: rotate(180deg); position:relative;">
-                            <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
-                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
-                                <g class="chevron__container">
-                                    <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
-                                    <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="acc-panel">
-                        <p>Please join our <a href="https://discord.gg/Tn6gN4bGX5">Discord</a> where the full details
-                            are provided. Be sure to check it
-                            out and get involved!</p>
-                    </div>
-                    <div class="container" style="height: 1em;"></div>
-                    <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
-                        <h2 class="navbarText col-10 unselectable">What is the mint price?</h2>
-                        <div id="chev" class="chevron--down col-2"
-                            style="transform: rotate(180deg); position:relative;">
-                            <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
-                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
-                                <g class="chevron__container">
-                                    <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
-                                    <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="acc-panel">
-                        <p>We will set the MINT price individually in dollars,
-                            not in Solana. It is necessary because, as you know,
-                            the crypto market can produce fluctuations of up to 5-15% per day.
-                            1 Nft will cost $77. (The price will be determined in SOL a few hours before the sale.)
-                            It is the amount we can use to assure our holders of the success of our following project
-                            (Phase 2).</p>
-                    </div>
-                    <div class="container" style="height: 1em;"></div>
-                    <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
-                        <h2 class="navbarText col-10 unselectable">When is the mint date?</h2>
-                        <div id="chev" class="chevron--down col-2"
-                            style="transform: rotate(180deg); position:relative;">
-                            <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
-                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
-                                <g class="chevron__container">
-                                    <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
-                                    <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="acc-panel">
-                        <p>The Enter Saiba collection mint date will be by mid-march. </p>
-                    </div>
-                    <script src="new-accordion.js"></script>
 
+                        <div class="acc-panel">
+                            <p>Yes. There will be a whitelist for members who have been active in our community and
+                                showed
+                                dedication to the project and future of the Saiba.</p>
+                        </div>
+                    </div>
+                    <div class="container" style="height: 1em;"></div>
+                    <div id="Question3">
+                        <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
+                            <h2 class="navbarText col-10 unselectable">How can I get Whitelisted?</h2>
+                            <div id="chev" class="chevron--down col-2"
+                                style="transform: rotate(180deg); position:relative;">
+                                <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
+                                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                    <g class="chevron__container">
+                                        <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
+                                        <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="acc-panel">
+                            <p>Please join our <a href="https://discord.gg/Tn6gN4bGX5">Discord</a> where the full
+                                details
+                                are provided. Be sure to check it
+                                out and get involved!</p>
+                        </div>
+                    </div>
+                    <div class="container" style="height: 1em;"></div>
+                    <div id="Question4">
+                        <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
+                            <h2 class="navbarText col-10 unselectable">What is the mint price?</h2>
+                            <div id="chev" class="chevron--down col-2"
+                                style="transform: rotate(180deg); position:relative;">
+                                <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
+                                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                    <g class="chevron__container">
+                                        <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
+                                        <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="acc-panel">
+                            <p>We will set the MINT price individually in dollars,
+                                not in Solana. It is necessary because, as you know,
+                                the crypto market can produce fluctuations of up to 5-15% per day.
+                                1 Nft will cost $77. (The price will be determined in SOL a few hours before the sale.)
+                                It is the amount we can use to assure our holders of the success of our following
+                                project
+                                (Phase 2).</p>
+                        </div>
+                    </div>
+                    <div class="container" style="height: 1em;"></div>
+                    <div id="Question5">
+                        <div class="accordion row m-0 p-0 d-flex justify-content-between align-items-center">
+                            <h2 class="navbarText col-10 unselectable">When is the mint date?</h2>
+                            <div id="chev" class="chevron--down col-2"
+                                style="transform: rotate(180deg); position:relative;">
+                                <svg width="20" height="20" version="1.1" viewbox="0 0 100 100"
+                                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                    <g class="chevron__container">
+                                        <line class="chevron__line1" x1="10" y1="50" x2="50" y2="50" />
+                                        <line class="chevron__line2" x1="90" y1="50" x2="50" y2="50" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="acc-panel">
+                            <p>The Enter Saiba collection mint date will be by mid-march. </p>
+                        </div>
+                    </div>
+                    <script src="scripts/new-accordion.js"></script>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Team section -->
     <div class="background-layer1" id="Team">
         <div class="container px-3 vh-100">
             <div class="container" style="height: 3em;"></div>
@@ -746,44 +557,49 @@
                 <div class="col-xl-7 col-xxl-7 text-center ">
                     <div class="container" style="height: 2em;"></div>
                     <div class="row d-flex justify-content-center">
+                        <!-- Ádám Póti -->
                         <div class="flex-column d-flex justify-content-end p-3">
                             <a class="square" style="background-image: url('assets/Mr.Mellow.png');"
                                 href="https://www.instagram.com/potiadam/" target="_blank">
                                 <img src="assets/InstagramIcon.svg" alt="" class="social-icon">
                             </a>
-                            <h2 class="navbarText  pt-2">Mr. Mellow</h2>
+                            <h2 class="navbarText  pt-2">Ádám Póti</h2>
                             <p style="text-align: center;">CEO</p>
                         </div>
 
                     </div>
                     <div class="row d-flex justify-content-center">
+                        <!-- Máté Pataki -->
                         <div class="flex-column d-flex justify-content-end p-3">
                             <div class="square" style="background-image: url('assets/Matteo.jpeg')"></div>
-                            <h2 class="navbarText pt-2">Matteo</h2>
+                            <h2 class="navbarText pt-2">Máté Pataki</h2>
                             <p style="text-align: center;">CTO</p>
                         </div>
+                        <!-- dr. Márk Kovács -->
                         <div class="flex-column d-flex justify-content-end p-3">
                             <div class="square" style="background-image: url('assets/Rayn.png')"></div>
-                            <h2 class="navbarText pt-2">Raynbow</h2>
+                            <h2 class="navbarText pt-2">dr. Márk Kovács</h2>
                             <p style="text-align: center;">CCO</p>
                         </div>
 
                     </div>
                     <div class="row d-flex justify-content-center">
+                        <!-- Martin Póti -->
                         <div class="flex-column d-flex justify-content-start p-3">
                             <a class="square" style="background-image: url('assets/Dr.Riddle.png')"
                                 href="https://twitter.com/saiba_gen" target="_blank">
                                 <img src="assets/TwitterIcon.svg" alt="" class="social-icon">
                             </a>
-                            <h2 class="navbarText  pt-2">Dr. Riddle</h2>
+                            <h2 class="navbarText  pt-2">Martin Póti</h2>
                             <p style="text-align: center;">CSO</p>
                         </div>
+                        <!-- László Németh -->
                         <div class="flex-column d-flex justify-content-start p-3">
                             <a class="square" style="background-image: url('assets/NLaci.png')"
                                 href="https://www.artstation.com/nlaszlo" target="_blank">
                                 <img src="assets/ArtStationIcon.svg" alt="" class="social-icon">
                             </a>
-                            <h2 class="navbarText  pt-2">NLaszlo</h2>
+                            <h2 class="navbarText  pt-2">László Németh</h2>
                             <p style="text-align: center;">Artist</p>
                         </div>
                     </div>
@@ -791,33 +607,8 @@
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            // Add scrollspy to <body>
-            $('body').scrollspy({ target: ".navbar", offset: 50 });
 
-            // Add smooth scrolling on all links inside the navbar
-            $("#myNavbar a").on('click', function (event) {
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
-
-                    // Store hash
-                    var hash = this.hash;
-                    jQuery.easing.def = 'easeOutCirc';
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 400, function () {
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                }  // End if
-            });
-        });
-    </script>
+    <script src="scripts/scroll.js"></script>
 </body>
 
 </html>
