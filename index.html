@@ -187,6 +187,7 @@
             background-clip: text;
         }
 
+
         @media (max-width: 992px) {
             .offcanvas-header {
                 display: block;
@@ -244,13 +245,12 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbarColor"
         style="background-color: transparent; height: 80px;">
-        <div class="container px-3">
+        <div class="container-fluid px-3">
             <a class="navbar-brand" href="#">
                 <img src="assets/SaibaIconNoBackground.png" height="36" width="36">
             </a>
             <div class="navbar-collapse" id="main_nav" data-target="#myNavbar">
-                <div class="container">
-
+                <div class="container" id="header-top">
 
                     <ul class="navbar-nav" id="myNavbar">
                         <li class="nav-item btn-close navbarText"><a class="nav-link" href="#Home"> Home </a></li>
@@ -263,7 +263,7 @@
                     </ul>
                     <div class="row d-flex ms-auto order-5">
                         <div class="" style="padding-right: 10px;">
-                            <a href="https://discord.gg/Tn6gN4bGX5" target="_blank"> <img src="/assets/Discord.svg"
+                            <a href="https://discord.gg/kadyEKdDWb" target="_blank"> <img src="/assets/Discord.svg"
                                     height="45px" width="45px"></a>
                         </div>
                         <div class="" style="padding-right: 10px;">
@@ -282,29 +282,37 @@
             </div>
         </div>
     </nav>
-
+<script>
+    let width = window.outerWidth;
+    console.log("width: " + width);
+    if(width < 992) {
+    document.getElementById("header-top").className = 'container';
+    } else {
+        document.getElementById("header-top").className = 'container-fluid'; 
+    }
+</script>
     <script src="hamburger-menu.js"></script>
 
     <div class="background-layer1" id="Home">
-            <div class="background-layer2">
-                <div class="container px-3 vh-100">
-                    <div class="row m-0 align-items-center justify-content-xl-start h-100">
-                        <div class="col-lg-12 col-xl-7 col-xxl-6">
-                            <div class="text-xl-left text-lg-center">
-                                <h1> Saiba</h1>
-                                <h2 class="lead fw-normal text-white mb-4 navbarText">A safe NFT community platform</h2>
-                                <div class="d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn-grad navbarText" href="#features">MINT SOON...</a>
-                                </div>
+        <div class="background-layer2">
+            <div class="container px-3 vh-100">
+                <div class="row m-0 align-items-center justify-content-xl-start h-100">
+                    <div class="col-lg-12 col-xl-7 col-xxl-6">
+                        <div class="text-xl-left text-lg-center">
+                            <h1> Saiba</h1>
+                            <h2 class="lead fw-normal text-white mb-4 navbarText">A safe NFT community platform</h2>
+                            <div class="d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                <a class="btn-grad navbarText" href="https://enter-saiba.monkelabs.io/">MINT ON MONKELABS</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="container" style="height: 10em;"></div>
             </div>
-            
+            <div class="container" style="height: 10em;"></div>
         </div>
-       
+
+    </div>
+
     </div>
 
     <div class="background-layer1" id="Cards">
@@ -397,7 +405,8 @@
                             <div class="roadmap-card">
                                 <div class="info">
                                     <h2 class="navbarText title">Listing on Magic Eden</h2>
-                                    <p>We’ll be listing the Enter Saiba collection on Solana’s best-known secondary marketplace. We provide this to allow our customers to trade early.
+                                    <p>We’ll be listing the Enter Saiba collection on Solana’s best-known secondary
+                                        marketplace. We provide this to allow our customers to trade early.
                                     </p>
                                 </div>
                             </div>
@@ -411,21 +420,25 @@
                             <div class="roadmap-card">
                                 <div class="info">
                                     <h2 class="navbarText title">Free NFT in Phase 2 (10K)</h2>
-                                    <p>As long as they do NOT list their NFTs on the marketplace on the date we have set, Enter Saiba buyers will be entitled to one free NFT per wallet from the Phase 2 collection.
+                                    <p>As long as they do NOT list their NFTs on the marketplace on the date we have
+                                        set, Enter Saiba buyers will be entitled to one free NFT per wallet from the
+                                        Phase 2 collection.
                                     </p>
                                 </div>
                             </div>
                             <div class="roadmap-card">
                                 <div class="info">
                                     <h2 class="navbarText title">Instant Whitelist in Phase 2</h2>
-                                    <p>As long as they do NOT list their NFTs on the marketplace on the date we have set, Enter Saiba buyers will be entitled to a free WL slot per wallet in the Phase 2 collection.
+                                    <p>As long as they do NOT list their NFTs on the marketplace on the date we have
+                                        set, Enter Saiba buyers will be entitled to a free WL slot per wallet in the
+                                        Phase 2 collection.
                                     </p>
                                 </div>
                             </div>
                             <div class="roadmap-card">
                                 <div class="info">
                                     <h2 class="navbarText title">Staking</h2>
-                                    <p>We offer an opportunity to stake to owners after the closing of Phase 2. 
+                                    <p>We offer an opportunity to stake to owners after the closing of Phase 2.
                                     </p>
                                 </div>
                             </div>
@@ -456,21 +469,25 @@
                             <div class="roadmap-card">
                                 <div class="info">
                                     <h2 class="navbarText title">Listing on ME</h2>
-                                    <p>We’ll be listing the Saiba Agents collection on Solana’s best-known secondary marketplace. We provide this to allow our customers the opportunity to trade early.
+                                    <p>We’ll be listing the Saiba Agents collection on Solana’s best-known secondary
+                                        marketplace. We provide this to allow our customers the opportunity to trade
+                                        early.
                                     </p>
                                 </div>
                             </div>
                             <div class="roadmap-card">
                                 <div class="info">
                                     <h2 class="navbarText title">Royalty Distribution</h2>
-                                    <p>25% of royalties will be distributed among the owners of Saiba Agents every month.
+                                    <p>25% of royalties will be distributed among the owners of Saiba Agents every
+                                        month.
                                     </p>
                                 </div>
                             </div>
                             <div class="roadmap-card">
                                 <div class="info">
                                     <h2 class="navbarText title">Staking</h2>
-                                    <p>Staking opportunities will be offered to everyone, relative to the rarity of the NFTs.
+                                    <p>Staking opportunities will be offered to everyone, relative to the rarity of the
+                                        NFTs.
                                     </p>
                                 </div>
                             </div>
@@ -494,7 +511,8 @@
                             <div class="roadmap-card">
                                 <div class="info">
                                     <h2 class="navbarText title">Combining Parts for Assembled Accessories</h2>
-                                    <p>Saiba Accessories is an NFT collection of 10k composed for 3 separate, assemblable parts with different staking opportunities.
+                                    <p>Saiba Accessories is an NFT collection of 10k composed for 3 separate,
+                                        assemblable parts with different staking opportunities.
                                     </p>
                                 </div>
                             </div>
@@ -508,7 +526,9 @@
                             <div class="roadmap-card">
                                 <div class="info">
                                     <h2 class="navbarText title">Listing on ME</h2>
-                                    <p>We’ll be listing the Saiba Agents collection on Solana’s best-known secondary marketplace. We provide this to allow our customers the opportunity to trade early.
+                                    <p>We’ll be listing the Saiba Agents collection on Solana’s best-known secondary
+                                        marketplace. We provide this to allow our customers the opportunity to trade
+                                        early.
                                     </p>
                                 </div>
                             </div>
@@ -522,14 +542,17 @@
                             <div class="roadmap-card">
                                 <div class="info">
                                     <h2 class="navbarText title">Royalty Distribution</h2>
-                                    <p>30% of royalties will be distributed among the owners of Fully Assembled Accessories every month.
+                                    <p>30% of royalties will be distributed among the owners of Fully Assembled
+                                        Accessories every month.
                                     </p>
                                 </div>
                             </div>
                             <div class="roadmap-card">
                                 <div class="info">
                                     <h2 class="navbarText title">Staking</h2>
-                                    <p>Saiba Accessories offers further staking opportunities to its holders, which provides access to the pSAIBA token, as well as the SAIBA token which can be used for the platform. 
+                                    <p>Saiba Accessories offers further staking opportunities to its holders, which
+                                        provides access to the pSAIBA token, as well as the SAIBA token which can be
+                                        used for the platform.
                                     </p>
                                 </div>
                             </div>
@@ -575,24 +598,24 @@
             <div class="container d-sm-block d-md-none" style="height: 5em;"></div>
             <div class="row m-0 align-items-center justify-content-xl-start h-100">
                 <div class="col-lg-12 col-xl-8 col-xxl-8 p-0 m-0 text-sm-left">
-                    
-                        <div class="container" style="height: 2em;"></div>
-                        <img class="card-gif" src="assets/web_tokens_small.png">
-                    
+
+                    <div class="container" style="height: 2em;"></div>
+                    <img class="card-gif" src="assets/web_tokens_small.png">
+
                 </div>
                 <div class="col-xl-4 col-xxl-4 text-center">
                     <div class="container" style="height: 2em;"></div>
                     <h2 class="navbarText" style="text-align: start; text-transform: none;">pSAIBA TOKEN</h2>
-                    <p>Until the closing of Phase 3, by staking Enter Saiba (Phase 1) 
+                    <p>Until the closing of Phase 3, by staking Enter Saiba (Phase 1)
                         and Saiba Agents (Phase 2) NFTs, owners will receive pre-Saiba (pSAIBA)
-                         tokens, which they will be able to exchange for Saiba Accessories collection
-                          NFTs (Phase 3). </p>
+                        tokens, which they will be able to exchange for Saiba Accessories collection
+                        NFTs (Phase 3). </p>
                     <div class="container" style="height: 2em;"></div>
                     <h2 class="navbarText" style="text-align: start;">SAIBA TOKEN (PLATFORM)</h2>
-                    <p>After the closing of Phase 3, a new staking opportunity will 
+                    <p>After the closing of Phase 3, a new staking opportunity will
                         open to owners, in which all NFTs (Phase 1, 2, 3)
-                         will be open to staking for Saiba tokens (SAIBA),
-                          which is the native token of the Saiba platform.  </p>
+                        will be open to staking for Saiba tokens (SAIBA),
+                        which is the native token of the Saiba platform. </p>
                 </div>
             </div>
         </div>
@@ -724,13 +747,14 @@
                     <div class="container" style="height: 2em;"></div>
                     <div class="row d-flex justify-content-center">
                         <div class="flex-column d-flex justify-content-end p-3">
-                            <a class="square" style="background-image: url('assets/Mr.Mellow.png');" href="https://www.instagram.com/potiadam/" target="_blank">
-                            <img src="assets/InstagramIcon.svg" alt="" class="social-icon">
+                            <a class="square" style="background-image: url('assets/Mr.Mellow.png');"
+                                href="https://www.instagram.com/potiadam/" target="_blank">
+                                <img src="assets/InstagramIcon.svg" alt="" class="social-icon">
                             </a>
                             <h2 class="navbarText  pt-2">Mr. Mellow</h2>
                             <p style="text-align: center;">CEO</p>
                         </div>
-                       
+
                     </div>
                     <div class="row d-flex justify-content-center">
                         <div class="flex-column d-flex justify-content-end p-3">
@@ -743,18 +767,20 @@
                             <h2 class="navbarText pt-2">Raynbow</h2>
                             <p style="text-align: center;">CCO</p>
                         </div>
-                        
+
                     </div>
                     <div class="row d-flex justify-content-center">
                         <div class="flex-column d-flex justify-content-start p-3">
-                            <a class="square" style="background-image: url('assets/Dr.Riddle.png')" href="https://twitter.com/saiba_gen" target="_blank">
+                            <a class="square" style="background-image: url('assets/Dr.Riddle.png')"
+                                href="https://twitter.com/saiba_gen" target="_blank">
                                 <img src="assets/TwitterIcon.svg" alt="" class="social-icon">
                             </a>
                             <h2 class="navbarText  pt-2">Dr. Riddle</h2>
                             <p style="text-align: center;">CSO</p>
                         </div>
                         <div class="flex-column d-flex justify-content-start p-3">
-                            <a class="square" style="background-image: url('assets/NLaszlo.png')" href="https://www.artstation.com/nlaszlo" target="_blank">
+                            <a class="square" style="background-image: url('assets/NLaci.png')"
+                                href="https://www.artstation.com/nlaszlo" target="_blank">
                                 <img src="assets/ArtStationIcon.svg" alt="" class="social-icon">
                             </a>
                             <h2 class="navbarText  pt-2">NLaszlo</h2>
